@@ -1,0 +1,7 @@
+.pytest_cache
+*.log
+*.gz
+*.fls
+*.fdb_latexmk
+*.aux
+Temp
