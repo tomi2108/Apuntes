@@ -51,15 +51,16 @@ $a)$ Linealidad
 $$
 F(s) = \mathscr{L}[f(t)]\hspace{7pt} \wedge\hspace{7pt} G(s) = \mathscr{L}[g(t)]\hspace{7pt} \wedge\hspace{7pt} k_{1} , k_{2} \in \mathbb{R} \Rightarrow \mathscr{L}[k_{1}f(t) + k_{2}g(t)] = k_{1} F(s) + k_{2} G(s)
 $$
-
-$b)$ Primer propiedad de traslación
+\\
+\\
+$b)$ Primera propiedad de traslación
 
 $$
 F(s) = \mathscr{L}[f(t)] \Rightarrow \mathscr{L}[e^{at}f(t)] = F(s-a)
 $$
 Esto significa que multiplicar por $e^{at}$ en el dominio del tiempo, equivale a efectuar una traslación de $a$ unidades hacia la derecha en el dominio de Laplace.
-
-
+\\
+\\
 $c)$ Segunda propiedad de traslación
 
 $$
@@ -73,14 +74,16 @@ F(s) = \mathscr{L}[f(t)] \hspace{5pt} \wedge \hspace{5pt} g(t) = \left\{
 $$
 
 Esto significa que una traslación de $a$ unidades hacia la derecha en el dominio del tiempo equivale a multiplicar por $e^{-as}$ en el dominio de Laplace.
-
+\\
+\\
 $d)$ Cambio de escala
 
 
 $$
 F(s) = \mathscr{L}[f(t)] \Rightarrow \mathscr{L}[f(at)] = \frac{1}{a}F(\frac{s}{a})	
 $$
-
+\\
+\\
 $e)$ Transformada de las derivadas
 
 $$
@@ -88,28 +91,32 @@ F(s) = \mathscr{L}[f(t)] \Rightarrow \mathscr{L}[f^{n}(t)] = s^{n}\cdot F(s) -s^
 $$
 Se puede encontrar una relación entre esta propiedad y el binomio de Newton. Al avanzar en la sumatoria (de restas) el grado de $s^{n}$ va decreciendo mientras que el "grado" (orden) de la derivada de $f(0)$ va aumentando.\\
 Además vale la pena observar que una derivada en el dominio del tiempo, se traduce a un polinomio en el dominio de Laplace, esto junto con la propiedad siguiente será muy util para resolver ecuaciones diferenciales e integrodiferenciales.
-
+\\
+\\
 $f)$ Transformada de la integral simple
 
 $$
 F(s) = \mathscr{L}[f(t)] \Rightarrow \mathscr{L}[\int_{0}^{t}f(u)du] = \frac{F(s)}{s}
 $$
-
+\\
+\\
 $g)$ Multiplicación por $t^{n}$
 
 $$
 F(s) = \mathscr{L}[f(t)] \Rightarrow \mathscr{L}[t^{n}f(t)] = (-1)^{n}F^{(n)}(s)
 $$
 Es decir, multiplicar por $t^{n}$	en el dominio del tiempo equivale a derivar en el orden $n$ en el dominio de Laplace.
-
+\\
+\\
 $h)$ División por t
 
 $$
 F(s) = \mathscr{L}[f(t)] \Rightarrow \mathscr{L}[\frac{f(t)}{t}] = \int_{s}^{\infty}F(u)du
 $$
 Esto es valido siempre que $\exists \lim_{t\rightarrow 0} \frac{f(t)}{t}$
-Es decir, dividir por $t$ en el dominio del tiempo, equivale a integrar en el dominio de Laplace. Observar que en el dominio de laplace tenemos una función integral, al resolver nos quedará una función de $s$ como cualquier otra transformada.
-
+Es decir, dividir por $t$ en el dominio del tiempo, equivale a integrar en el dominio de Laplace. Observar que en el dominio de Laplace tenemos una función integral, al resolver nos quedará una función de $s$ como cualquier otra transformada.
+\\
+\\
 $i)$ Teorema del valor inicial
 
 Si existen los limites indicados, se cumple:
@@ -117,7 +124,8 @@ Si existen los limites indicados, se cumple:
 $$
 \lim_{t\rightarrow 0} f(t) = \lim_{s\rightarrow \infty} sF(s)
 $$
-
+\\
+\\
 $j)$ Teorema del valor final
 
 $$
@@ -125,7 +133,8 @@ $$
 $$
 
 Observar que en estas ultimas dos propiedades la transformada está multiplicada por $s$
-
+\\
+\\
 $k)$ Transformada de funciones periódicas
 
 $$
