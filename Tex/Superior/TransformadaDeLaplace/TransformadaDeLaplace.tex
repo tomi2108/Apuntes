@@ -136,19 +136,55 @@ Observar que en estas ultimas dos propiedades la transformada está multiplicada
 \\
 \\
 $k)$ Transformada de funciones periódicas
-
+4
 $$
 f(t) = f(t+T) \Rightarrow F(s) = \mathscr{L}[f(t)] = \frac{1}{1-e^{-sT}}\int_{0}^{T}e^{-st}f(t)dt
 $$
 \\
 \\
 
-\large Funciones especiales
+\large Funciones utiles
 \normalsize
 \\
 
-Estas son algunas funciones muy utilizadas dentro de la ingeniería y nos serán utiles para calcular transformadas de Laplace sin tener que usar la definición. Nos basaremos en estas funciones y haremos todos los calculos teniendo en cuenta las propiedades detalladas anteriormente.
+Estas son algunas funciones muy elementales y nos serán utiles para calcular transformadas de Laplace sin tener que usar la definición. Nos basaremos en estas funciones y haremos todos los calculos teniendo en cuenta las propiedades detalladas anteriormente.
 
+\Large
+$$
+\setlength{\tabcolsep}{20pt}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|c|c|}
+	\hline
+	\textbf{$f(t)$} & \textbf{$\mathscr{L}[f(t)] = F(s)$}\\
+	\hline
+	
+	$1$ & $\frac{1}{s}$ \\
+
+	\hline
+	$t$ & $\frac{1}{s^{2}}$ \\
+	\hline
+	$t^{n}$ & $\frac{n!}{s^{n+1}}$ \\
+	\hline
+	$e^{at}$ & $\frac{1}{s-a}$ \\
+	\hline
+	$\sin{at}$ & $\frac{a}{s^{2}+a^{2}}$ \\
+	\hline
+	$\cos{at}$ & $\frac{s}{s^{2}+a^{2}}$ \\
+	\hline
+	$\delta(t)$ & $1$ \\
+	\hline
+\end{tabular}
+$$
+
+\normalsize
+La función $\delta(t)$ es una funcíon especial y será explicada mas adelante.
+\\
+\\
+\large Funciones especiales.
+\normalsize
+\\
+
+Son funciones muy utilizadas dentro de la ingenieria y nos permiten modelar ciertos sistemas comunes. Además nos facilitaran el calculo de ciertas transformadas.
 
 
 \end{document}
