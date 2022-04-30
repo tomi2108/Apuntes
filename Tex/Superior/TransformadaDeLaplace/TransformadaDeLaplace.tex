@@ -1,5 +1,6 @@
 \documentclass[]{article}
 \usepackage{mathrsfs}
+\usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{graphicx}
 \usepackage[left=20mm, right=20mm, top=20mm, bottom=20mm]{geometry}
@@ -243,7 +244,23 @@ Entonces $f(t)$ puede ser escrita de la siguiente forma.
 $$
 f(t) = f_{1}(t)\cdot (E(t)-E(t-t_{1})) + f_{2}(t) \cdot (E(t-t_{1})-E(t-t_{2})) + f_{3}(t)E(t-t_{2})
 $$
-Luego la transformada podrá resolverse facilmente con la segunda propiedad de traslación.
+Simplificaremos la notación para resolver los calculos mas facil llamando:
+\begin{align}
+E(t) &= E_{0} \\
+E(t-t_{1}) &= E_{t_1} 
+\end{align}
+Entonces se deduce:
+\begin{align}
+  f(t) &= f_{1}(t)\cdot (E_0-E_{t_1}) + f_{2}(t) \cdot (E_{t_1}-E_{t_2}) + f_{3}(t)E_{t_2} \\
+f(t) &= f_1(t)E_{0} - f_1(t)E_{t_{1}} + f_2(t)E_{t_{1}} - f_2(t)E_{t_2} +f_3(t)E_{t_2} \\
+f(t) & = f_1(t)E_0 + E_{t_1}\cdot(f_2(t) - f_1(t)) + E_{t_2}\cdot(f_3(t)-f_2(t))
+\end{align}
+Al aplicar la transformada queda:
+\begin{align}
+  F(s) &= \mathscr{L}[f_1(t)E_0 + E_{t_1}\cdot(f_2(t) - f_1(t)) + E_{t_2}\cdot(f_3(t)-f_2(t))] \\
+  F(s) &= \mathscr{L}[f_1(t)E_0] + \mathscr{L}[E_{t_1}\cdot(f_2(t) - f_1(t))] + \mathscr{L}[ E_{t_2}\cdot(f_3(t)-f_2(t))] \\
+  F(s)& = \mathscr{L}[f_1(t)] + e^{-t_1s}\cdot (\mathscr{L}[f_2(t)] - \mathscr{L}[f_1(t)]) + e^{-t_2s} \cdot(\mathscr{L}[f_3(t)]-\mathscr{L}[f_2(t)]) 
+\end{align}
 \\
 \\
 \large Función impulso unitario
