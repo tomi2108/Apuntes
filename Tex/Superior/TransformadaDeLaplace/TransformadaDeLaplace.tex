@@ -185,6 +185,71 @@ La función $\delta(t)$ es una funcíon especial y será explicada mas adelante.
 \\
 
 Son funciones muy utilizadas dentro de la ingenieria y nos permiten modelar ciertos sistemas comunes. Además nos facilitaran el calculo de ciertas transformadas.
+\\
+\\
+\large Función escalón unitario
+
+\normalsize
+
+
+$$
+E(t) = \left\{
+	\begin{array}{ll}
+		1 \hspace{10pt} t > 0 \\
+		0 \hspace{10pt} t < 0
+	\end{array}
+\right. \\
+$$
+o bien
+$$
+E(t-a) = \left\{
+	\begin{array}{ll}
+		1 \hspace{10pt} t > 0 \\
+		0 \hspace{10pt} t < a
+	\end{array}
+\right. \\
+$$
+\\
+Esta función es muy importante, ya que multiplicada por una constante ,puede representar funciones constantes apartir de un cierto instante $a$. Es muy util para representar una señal de tensión continua, o una fuerza constante aplicada sobre algún sistema mecánico.
+
+\includegraphics{../../../Imagenes/Superior/Superior02.PNG}
+
+La trasnformada de $E(t)$ aparece en la tabla y la de $E(t-a)$ es muy sencilla de calcular con la segunda propiedad de traslación.
+$$
+\mathscr{L}[E(t)] = \frac{1}{s}
+$$
+$$
+\mathscr{L}[E(t-a)] = \frac{e^{-as}}{s}
+$$
+
+Además la función $E(t-a)$ resulta muy util para considerar funciones a partir de un cierto instante y definir funciones por trozos.
+Consideremos el siguiente ejemplo:
+
+\includegraphics{../../../Imagenes/Superior/Superior03.PNG}
+
+
+Si multiplicamos $f(t)$ por $E(t-t_{1})$ obtenemos: 
+
+\includegraphics{../../../Imagenes/Superior/Superior04.PNG}
+
+Como $E(t-t_{1})$ vale $0$ antes de $t_{1}$ al multiplicar por $f(t)$ esta se reduce a $0$, y despues de $t_{1}$ la funcion $f(t)$ queda igual porque se está multiplicando por $1$.
+
+Veamos ahora un ejemplo aún mas util que nos facilitará el calculo de una transformada. Como ya mencionamos, la funcíon $E(t)$ nos ayuda a la hora de escribir funciones por partes y ciertamente nos ayudará a calcular su transformada.
+
+\includegraphics{../../../Imagenes/Superior/Superior05.PNG}
+
+
+Entonces $f(t)$ puede ser escrita de la siguiente forma.
+$$
+f(t) = f_{1}(t)\cdot (E(t)-E(t-t_{1})) + f_{2}(t) \cdot (E(t-t_{1})-E(t-t_{2})) + f_{3}(t)E(t-t_{2})
+$$
+Luego la transformada podrá resolverse facilmente con la segunda propiedad de traslación.
+\\
+\\
+\large Función impulso unitario
+\\
+\normalsize
+
 
 
 \end{document}
