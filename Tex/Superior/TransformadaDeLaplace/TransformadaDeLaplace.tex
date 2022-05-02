@@ -211,7 +211,7 @@ E(t-a) = \left\{
 \right. \\
 $$
 \\
-Esta función es muy importante, ya que multiplicada por una constante ,puede representar funciones constantes apartir de un cierto instante $a$. Es muy util para representar una señal de tensión continua, o una fuerza constante aplicada sobre algún sistema mecánico.
+Esta función es muy importante, ya que multiplicada por una constante, puede representar funciones constantes apartir de un cierto instante $a$. Es muy util para representar una señal de tensión continua, o una fuerza constante aplicada sobre algún sistema mecánico.
 
 \includegraphics{../../../Imagenes/Superior/Superior02.PNG}
 
@@ -246,27 +246,77 @@ f(t) = f_{1}(t)\cdot (E(t)-E(t-t_{1})) + f_{2}(t) \cdot (E(t-t_{1})-E(t-t_{2})) 
 $$
 Simplificaremos la notación para resolver los calculos mas facil llamando:
 \begin{align}
-E(t) &= E_{0} \\
-E(t-t_{1}) &= E_{t_1} 
+	E(t) &= E_{0} \\
+	E(t-t_{n}) &= E_{t_n} 
 \end{align}
 Entonces se deduce:
 \begin{align}
   f(t) &= f_{1}(t)\cdot (E_0-E_{t_1}) + f_{2}(t) \cdot (E_{t_1}-E_{t_2}) + f_{3}(t)E_{t_2} \\
-f(t) &= f_1(t)E_{0} - f_1(t)E_{t_{1}} + f_2(t)E_{t_{1}} - f_2(t)E_{t_2} +f_3(t)E_{t_2} \\
-f(t) & = f_1(t)E_0 + E_{t_1}\cdot(f_2(t) - f_1(t)) + E_{t_2}\cdot(f_3(t)-f_2(t))
+	f(t) &= f_1(t)E_{0} - f_1(t)E_{t_{1}} + f_2(t)E_{t_{1}} - f_2(t)E_{t_2} +f_3(t)E_{t_2} \\
+	f(t) & = f_1(t)E_0 + E_{t_1}\cdot(f_2(t) - f_1(t)) + E_{t_2}\cdot(f_3(t)-f_2(t))
 \end{align}
 Al aplicar la transformada queda:
 \begin{align}
   F(s) &= \mathscr{L}[f_1(t)E_0 + E_{t_1}\cdot(f_2(t) - f_1(t)) + E_{t_2}\cdot(f_3(t)-f_2(t))] \\
   F(s) &= \mathscr{L}[f_1(t)E_0] + \mathscr{L}[E_{t_1}\cdot(f_2(t) - f_1(t))] + \mathscr{L}[ E_{t_2}\cdot(f_3(t)-f_2(t))] \\
-  F(s)& = \mathscr{L}[f_1(t)] + e^{-t_1s}\cdot (\mathscr{L}[f_2(t)] - \mathscr{L}[f_1(t)]) + e^{-t_2s} \cdot(\mathscr{L}[f_3(t)]-\mathscr{L}[f_2(t)]) 
+  F(s)& = \mathscr{L}[f_1(t)] + e^{-t_1s}\cdot (\mathscr{L}[f_2(t+t_1)] - \mathscr{L}[f_1(t+t_1)]) + e^{-t_2s} \cdot(\mathscr{L}[f_3(t+t_2)]-\mathscr{L}[f_2(t+t_2)]) 
 \end{align}
+\\
+Cabe observar que en el ultimo paso las $f_n$ aparecen aplicadas en $t+t_n$, esto se debe a que, aplicar la transformada a una funcíon multiplicada por un escalón $E_{t_n}$ es equivalente a aplicar la transformada a la funcíon corrida hacia el eje de ordenadas $t_n$ unidades y multiplicar por el factor $e^{-t_n s}$. Para ver esto mas claro podemos pensar en la segunda propiedad de traslación, donde la $g(t)$ es nuestra $f_n(t)$ y la $f(t)$ es nuestra $f_n(t+t_n)$. Luego, la transformada se separa en dos por linealidad. 
 \\
 \\
 \large Función impulso unitario
 \\
 \normalsize
+Es una función muy util para representar un valor en un lapso de tiempo infinitesimal, por ejemplo una fuerza aplicada en un instante dado a un bloque de masa. Esta descripción nos puede llevar a pensar si en verdad se trata de una función, lo discutiremos mas adelante. La función impulso unitario se define:
+$$
+\delta(t) = \lim_{\tau \rightarrow 0} F_{\delta}(t)
+$$
+con
+$$
+F_{\delta(t)} = \left\{
+	\begin{array}{ll}
+		1/\tau \hspace{10pt} 0 \leq t < \tau \\
+		0 \hspace{40pt} t > \tau
+	\end{array}
+	\right.
+	$$
+	Para visualizar la función pensemos en el grafico de $F_{\delta}(t)$ cuando $\tau \rightarrow 0$. 
+	
+	\includegraphics{../../../Imagenes/Superior/Superior06.PNG}
+	
+	Sombreando bajo la curva obtenemos un rectangulo de area $\frac{1}{\tau} \cdot \tau = 1$.\\
+	Al hacer que $\tau$ tienda a $0$ la base del rectangulo será infinitesimal y la altura infinita.
+	
+	\includegraphics{../../../Imagenes/Superior/Superior07.PNG}
+
+Es decir, la función $\delta(t)$ es una función que vale $0$ en todo el eje real menos en $t = 0$ donde vale $+\infty$.\\
+Matematicamente hablando $\delta(t)$ no es una función sino mas bien una distribución, pero aún así esta tiene una gran importancia y utilidad al momento de plantear y resolver modelos matematicos de sistemas fiscos y será tratada como una función. Para mas información buscar Delta de Dirac.
+
+Algunas propiedades útiles de $\delta(t)$ son:
+\\
+\\
+$a)$
+$$
+\int_{0}^{\infty} \delta(t) dt = 1
+$$
+\\
+\\
+$b)$
+$$
+\int_{0}^{\infty} \delta(t)f(t) dt = f(0)
+$$
+\\
+\\
+$c)$
+$$
+\int_{0}^{\infty} \delta(t-a)f(t) dt = f(a)
+$$
+\\
+\\
+\\
+\\
+\huge Antitransformada de Laplace.
 
 
-
-\end{document}
+	\end{document}
