@@ -31,8 +31,9 @@ $f(t) = 0  \hspace{10pt} \forall t < 0$.
 $$
 F(s) = \int_{0}^{\infty} f(t) e^{-st} dt
 $$
-
-\large Teorema de existencia.
+\\
+\\
+\Large Teorema de existencia.
 \\
 
 \normalsize Sea $f(t)$ una función seccionalmente continua y $f(t)$ de orden exponencial $\gamma$ para $t > N \Rightarrow \exists \hspace{5pt} \mathscr{L}[f(t)]$
@@ -43,8 +44,9 @@ Es decir, la función en módulo no puede crecer mas que $Me^{\gamma t}$ a parti
 
 
 \includegraphics{../../../Imagenes/Superior/Superior01.PNG}
-
-\large Propiedades de la transformada de Laplace
+\\
+\\
+\Large Propiedades de la transformada de Laplace
 \normalsize
 \\
 \\
@@ -141,8 +143,7 @@ f(t) = f(t+T) \Rightarrow F(s) = \mathscr{L}[f(t)] = \frac{1}{1-e^{-sT}}\int_{0}
 $$
 \\
 \\
-
-\large Funciones utiles
+\Large Funciones utiles
 \normalsize
 \\
 
@@ -179,14 +180,14 @@ $$
 La función $\delta(t)$ es una funcíon especial y será explicada mas adelante.
 \\
 \\
-\large Funciones especiales.
+\Large Funciones especiales.
 \normalsize
 \\
 
 Son funciones muy utilizadas dentro de la ingenieria y nos permiten modelar ciertos sistemas comunes. Además nos facilitaran el calculo de ciertas transformadas.
 \\
 \\
-\large Función escalón unitario
+\Large Función escalón unitario
 
 \normalsize
 
@@ -263,7 +264,7 @@ Al aplicar la transformada queda:
 Cabe observar que en el ultimo paso las $f_n$ aparecen aplicadas en $t+t_n$, esto se debe a que, aplicar la transformada a una funcíon multiplicada por un escalón $E_{t_n}$ es equivalente a aplicar la transformada a la funcíon corrida hacia el eje de ordenadas $t_n$ unidades y multiplicar por el factor $e^{-t_n s}$. Para ver esto mas claro podemos pensar en la segunda propiedad de traslación, donde la $g(t)$ es nuestra $f_n(t)$ y la $f(t)$ es nuestra $f_n(t+t_n)$. Luego, la transformada se separa en dos por linealidad. 
 \\
 \\
-\large Función impulso unitario
+\Large Función impulso unitario
 \\
 \normalsize
 Es una función muy util para representar un valor en un lapso de tiempo infinitesimal, por ejemplo una fuerza aplicada en un instante dado a un bloque de masa. Esta descripción nos puede llevar a pensar si en verdad se trata de una función, lo discutiremos mas adelante. La función impulso unitario se define:
@@ -322,8 +323,9 @@ Si $\exists \mathscr{L}[f(t)] = F(s) \Rightarrow f(t)$ es la antitransformada de
 \\
 La antitransformada se indica: $$\mathscr{L}^{-1}[F(s)] = f(t)$$
 Para el calculo de las antitransformadas se utiliza la tabla anterior pero esta vez en sentido inverso.
-
-\large Propiedades de la antitransformada de Laplace
+\\
+\\
+\Large Propiedades de la antitransformada de Laplace
 \normalsize
 \\
 \\
@@ -383,15 +385,170 @@ $$
 Para estudiar las propiedades de la antitransformada es importante tener en cuenta las de la transformada ya que son practicamete las mismas pero en sentido inverso. Es decir, multiplicar por $t$ es derivar en $s$ y multiplicar en $s$ es derivar en $t$. Todas las propiedaes de la transformada de Laplace (a exepción de las ultimas dos) tienen su contrapartida en la antitransformada. Veremos ahora un método para calcular ciertas antitransformadas que nos será útil.
 \\
 \\
-\large Resolución de antitransformada por fracciones simples.
+\Large Resolución de antitransformada por fracciones simples.
 \normalsize
+\\
+\\
+Sea $F(s) = \frac{P(S)}{Q(S)}$ tal que el grado de $P(s) <$ grado de  $Q(s) \Rightarrow \frac{P(s)}{Q(s)}$ se puede escribir como una suma de fracciones simples del tipo:
+\\Si $\alpha$ es raiz de $Q(s)$ con multiplicidad $p$:
+$$ 
+\frac{A}{(s-\alpha)^{p}}
+$$
+o bien si $Q(s)$ tiene raices complejas conjugadas:
+$$
+\frac{Bs+C}{s^{2}+bs+c}
+$$
+\\
+Supongamos que debemos antitransformar la siguiente $F(s)$:
+$$
+F(s) = \frac{s+7}{s^{2}+6s+5}
+$$
+Primero factorizamos el denmoniador buscando sus raices, en este caso son $-1$ y $-5$.
+$$
+F(s) = \frac{s+7}{(s+1)(s+5)}
+$$
+Luego proponemos las constantes:
+$$
+F(s) = \frac{A}{s+1} + \frac{B}{s+5} = \frac{A(s+5)+B(s+1)}{s^{2}+6s+5}
+$$
+Podemos distribuir las constantes y por igualdad de polinomios armar un sistema de ecuaciones con la $F(s)$ del principio.
+$$
+A(s+5)+B(s+1) = s+7 \Rightarrow A+B = 1 \hspace{5pt} \wedge \hspace{5pt} 5A+B=7
+$$
+Resolvemos el sistema y encontramos:
+$$
+A = \frac{3}{2} \hspace{5pt} \wedge \hspace{5pt} B= -\frac{1}{2}
+$$
+Ahora reescribimos la $F(s)$ y estamos listos para antritransformar.
+$$
+F(s) = \frac{3}{2} \cdot\frac{1}{s+1} - \frac{1}{2} \cdot \frac{1}{s+5}
+$$
+Usando la tabla de transformadas y la propiedad de traslación nos queda:
+$$
+\mathscr{L}^{-1}[F(s)]  = \frac{3}{2} e^{-t} - \frac{1}{2} e^{-5t}
+$$
+\\
+\\
+\Large Resolución de ecuaciones diferenciales por trasnformada de Laplace
+\normalsize
+\\
+\\
+Dada una ecuación diferencial oridnaria, este metodo consiste en aplicar la transformada de Laplace lo cual la convierte en una ecuación algebraica. De este modo, se resuelve mas sencillamente en el dominio de Laplace y luego se antitransforma para volver a la variable original $t$.
 
+Supongamos que debemos resolver la siguiente ecuacion diferencial con $y(0) = 0$ y $y'(0)=2$:
+$$
+y''(t) + 9y(t) = 0
+$$
+La idea de este metodo es no tener que resolver cuentas en el dominio del tiempo, por esto empezamos aplicando transformada de Laplace en ambos miembros:
+$$
+s^{2}Y(s)-sy(0)-y'(0)+9Y(s) = 0
+$$
+Si no se entiende de donde sale esta ecuacion volver a leer las propieades de la transformada de las derivadas.\\
+Ahora reemplazamos los datos iniciales:
+$$
+s^{2}Y(s)-2+9Y(s) = 0
+$$
+Recordemos que nuestro objetivo es despejar la $Y(s)$ para así poder antitrasnformas y encontrar $y(t)$, para esto sacamos factor comun $Y(s)$:
+$$
+Y(s)(s^{2}+9) = 2 \Rightarrow Y(s) = \frac{2}{(s^{2}+9)}
+$$
+Antes de antritransformar, manipulamos algebraicamente para que la antitrasnformación sea mas sencilla:
+$$
+Y(s) = \frac{2}{(s^{2}+9)} = \frac{2}{3} \cdot  \frac{3}{(s^{2}+9)}
+$$
+Ahora antritransformamos:
+$$
+y(t) = \frac{2}{3} \sin(3t)
+$$
+No siempre la antritransformación será tan directa, muchas veces se debe aplicar fracciones simples para realizar este paso.
+\\
+\\
+Supongamos que debemos resolver el siguiente sistema de ecuaciones difrenciales con $x(0)=8$ y $y(0)=3$:
 
+	\begin{align}
+		x'(t)  &= 2x(t)-3y(t) \\
+		y'(t) &= y(t) -2x(t)
+	\end{align}
+\\
+Empezaremos aplicando transformada de Laplace a ambas ecuaciones y reemplazando los datos iniciales:
 
+\begin{align}
+	sX(s)-8  &= 2X(s)-3Y(s) \\
+	sY(s)-3 &= Y(s) -2X(s)
+\end{align}
 
+Vamos a utilizar el método de Cramer para la resolución, para ello, acomodamos los terminos:
 
+\begin{align}
+	(s-2)X(s) +3Y(s)&= 8 \\
+	2X(s)+(s-1)Y(s) &= 3
+\end{align}
 
+Calculamos el determinante de la matriz de coeficientes:
+$$
+\Delta = \begin{vmatrix}
+	s-2 & 3\\
+	2 & s-1
+	\end{vmatrix} = (s-2)(s-1) - 3\cdot 2 = s^{2}-3s+4  = (s-4)(s+1)
+$$
+Ahora calculamos el determinante asociado a la variable $X(s)$ es decir, en la columna de coeficientes de $X(s)$ reemplazamos con los terminos independientes originales.
 
+$$
+\Delta X(s)= \begin{vmatrix}
+	8 & 3\\
+	3 & s-1
+	\end{vmatrix} = 8(s-1) - 3\cdot 3 = 8s-17
+$$
+Ahora por el metodo de cramer podemos escribir a $X(s)$ como:
+$$
+X(s) = \frac{8s-17}{(s-4)(s+1)}
+$$
+Ahora debemos antitransformar, para esto usamos fracciones simples:
+$$
+X(s) = \frac{A}{(s-4)} + \frac{B}{(s+1)}
+$$
+$$
+A(s+1) + B(s-4) = 8s-17 \Rightarrow A+B = 8 \hspace{5pt} \wedge \hspace{5pt} A-4B = -17
+$$
+$$
+A=3 \hspace{5pt} \wedge \hspace{5pt} B = 5
+$$
+Finalmente queda:
+$$
+X(s) = \frac{3}{(s-4)} + \frac{5}{(s+1)}
+$$
+Antitransformamos:
+$$
+x(t) = 3e^{4t} + 5e^{-t}
+$$
+Y ahora haremos lo mismo para $Y(s)$:
 
-
+$$
+\Delta Y(s)= \begin{vmatrix}
+	s-2 & 8\\
+	2 & 3
+	\end{vmatrix} = (s-2)3 - 8\cdot 2 = 3s-22
+$$
+Ahora por el metodo de cramer podemos escribir a $Y(s)$ como:
+$$
+Y(s) = \frac{3s-22}{(s-4)(s+1)}
+$$
+Ahora debemos antitransformar, para esto usamos fracciones simples:
+$$
+Y(s) = \frac{A}{(s-4)} + \frac{B}{(s+1)}
+$$
+$$
+A(s+1) + B(s-4) = 3s-22 \Rightarrow A+B = 3 \hspace{5pt} \wedge \hspace{5pt} A-4B = -22
+$$
+$$
+A=-2 \hspace{5pt} \wedge \hspace{5pt} B = 5
+$$
+Finalmente queda:
+$$
+Y(s) = \frac{-2}{(s-4)} + \frac{5}{(s+1)}
+$$
+Antitransformamos:
+$$
+y(t) = -2e^{4t} + 5e^{-t}
+$$
 	\end{document}
