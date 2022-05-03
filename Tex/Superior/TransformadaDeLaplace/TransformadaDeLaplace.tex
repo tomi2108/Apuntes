@@ -78,8 +78,6 @@ Esto significa que una traslación de $a$ unidades hacia la derecha en el domini
 \\
 \\
 $d)$ Cambio de escala
-
-
 $$
 F(s) = \mathscr{L}[f(t)] \Rightarrow \mathscr{L}[f(at)] = \frac{1}{a}F(\frac{s}{a})	
 $$
@@ -109,7 +107,7 @@ $$
 Es decir, multiplicar por $t^{n}$	en el dominio del tiempo equivale a derivar en el orden $n$ en el dominio de Laplace.
 \\
 \\
-$h)$ División por t
+$h)$ División por $t$
 
 $$
 F(s) = \mathscr{L}[f(t)] \Rightarrow \mathscr{L}[\frac{f(t)}{t}] = \int_{s}^{\infty}F(u)du
@@ -315,8 +313,85 @@ $$
 \\
 \\
 \\
-\\
+
 \huge Antitransformada de Laplace.
+\normalsize
+\\
+
+Si $\exists \mathscr{L}[f(t)] = F(s) \Rightarrow f(t)$ es la antitransformada de $F(s)$.
+\\
+La antitransformada se indica: $$\mathscr{L}^{-1}[F(s)] = f(t)$$
+Para el calculo de las antitransformadas se utiliza la tabla anterior pero esta vez en sentido inverso.
+
+\large Propiedades de la antitransformada de Laplace
+\normalsize
+\\
+\\
+$a)$ Linealidad
+$$
+\mathscr{L}^{-1}[F(s)] = f(t)\hspace{7pt} \wedge\hspace{7pt} \mathscr{L}^{-1}[G(s)] = g(t)\hspace{7pt} \wedge\hspace{7pt} k_{1} , k_{2} \in \mathbb{R} \Rightarrow \mathscr{L}^{-1}[k_{1}F(s) + k_{2}G(s)] = k_{1} f(t) + k_{2} g(t)
+$$
+\\
+\\
+$b)$ Primera propiedad de traslación
+$$
+f(t) = \mathscr{L}^{-1}[F(s)] \Rightarrow \mathscr{L}^{-1}[F(s-a)] = e^{at}f(t)
+$$
+\\
+\\
+$c)$ Segunda propiedad de traslación
+$$ 
+\mathscr{L}^{-1}[F(s)] = f(t) \hspace{5pt}
+\Rightarrow \mathscr{L}^{-1}[e^{-as}F(s)] = g(t) = \left\{
+	\begin{array}{ll}
+		f(t-a) \hspace{10pt} t > a \\
+		0 \hspace{40pt} t < a
+	\end{array}
+\right. \\ 
+$$
+\\
+\\
+$d)$ Cambio de escala
+$$
+f(t) = \mathscr{L}^{-1}[F(s)] \Rightarrow \mathscr{L}^{-1}[\frac{1}{a}F(\frac{s}{a})] = f(at) 	
+$$
+\\
+\\
+$e)$ Antitransformada de las derivadas
+$$
+f(t) = \mathscr{L}^{-1}[F(s)] \Rightarrow \mathscr{L}^{-1}[F^{(n)}(s)] = (-1)^{n}t^{n}f(t) 
+$$
+\\
+\\
+$f)$ Antitransformada de las integrales
+$$
+f(t) = \mathscr{L}^{-1}[F(s)] \Rightarrow \mathscr{L}^{-1}[\int_s^{\infty}F(u)du] =\frac{f(t)}{t}
+$$
+\\
+\\
+$g)$ Multiplicación por $s$
+$$
+f(t) = \mathscr{L}^{-1}[F(s)] \Rightarrow f(t) = \mathscr{L}^{-1}[sF(s)-f(0)] = f'(t) 
+$$
+\\
+\\
+$h)$ División por $s$
+$$
+f(t) = \mathscr{L}^{-1}[F(s)] \Rightarrow \mathscr{L}^{-1}[\frac{F(s)}{s}] = \int_0^{t} f(u)du
+$$
+\\
+Para estudiar las propiedades de la antitransformada es importante tener en cuenta las de la transformada ya que son practicamete las mismas pero en sentido inverso. Es decir, multiplicar por $t$ es derivar en $s$ y multiplicar en $s$ es derivar en $t$. Todas las propiedaes de la transformada de Laplace (a exepción de las ultimas dos) tienen su contrapartida en la antitransformada. Veremos ahora un método para calcular ciertas antitransformadas que nos será útil.
+\\
+\\
+\large Resolución de antitransformada por fracciones simples.
+\normalsize
+
+
+
+
+
+
+
 
 
 	\end{document}
