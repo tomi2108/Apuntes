@@ -43,7 +43,7 @@ Una función $f(t)$ es de orden exponencial $\gamma \Longleftrightarrow$ ${\exis
 Es decir, la función en módulo no puede crecer mas que $Me^{\gamma t}$ a partir de un cierto valor $N$.
 
 
-\includegraphics{../../../Imagenes/Superior/Superior01.PNG}
+\includegraphics{../../../Imagenes/Superior/TransformadaDeLaplace/Laplace01.PNG}
 \\
 \\
 \Large Propiedades de la transformada de Laplace
@@ -212,7 +212,7 @@ $$
 \\
 Esta función es muy importante, ya que multiplicada por una constante, puede representar funciones constantes apartir de un cierto instante $a$. Es muy util para representar una señal de tensión continua, o una fuerza constante aplicada sobre algún sistema mecánico.
 
-\includegraphics{../../../Imagenes/Superior/Superior02.PNG}
+\includegraphics{../../../Imagenes/Superior/TransformadaDeLaplace/Laplace02.PNG}
 
 La trasnformada de $E(t)$ aparece en la tabla y la de $E(t-a)$ es muy sencilla de calcular con la segunda propiedad de traslación.
 $$
@@ -225,18 +225,18 @@ $$
 Además la función $E(t-a)$ resulta muy util para considerar funciones a partir de un cierto instante y definir funciones por trozos.
 Consideremos el siguiente ejemplo:
 
-\includegraphics{../../../Imagenes/Superior/Superior03.PNG}
+\includegraphics{../../../Imagenes/Superior/TransformadaDeLaplace/Laplace03.PNG}
 
 
 Si multiplicamos $f(t)$ por $E(t-t_{1})$ obtenemos: 
 
-\includegraphics{../../../Imagenes/Superior/Superior04.PNG}
+\includegraphics{../../../Imagenes/Superior/TransformadaDeLaplace/Laplace04.PNG}
 
 Como $E(t-t_{1})$ vale $0$ antes de $t_{1}$ al multiplicar por $f(t)$ esta se reduce a $0$, y despues de $t_{1}$ la funcion $f(t)$ queda igual porque se está multiplicando por $1$.
 
 Veamos ahora un ejemplo aún mas util que nos facilitará el calculo de una transformada. Como ya mencionamos, la funcíon $E(t)$ nos ayuda a la hora de escribir funciones por partes y ciertamente nos ayudará a calcular su transformada.
 
-\includegraphics{../../../Imagenes/Superior/Superior05.PNG}
+\includegraphics{../../../Imagenes/Superior/TransformadaDeLaplace/Laplace05.PNG}
 
 
 Entonces $f(t)$ puede ser escrita de la siguiente forma.
@@ -282,12 +282,12 @@ F_{\delta(t)} = \left\{
 	$$
 	Para visualizar la función pensemos en el grafico de $F_{\delta}(t)$ cuando $\tau \rightarrow 0$. 
 	
-	\includegraphics{../../../Imagenes/Superior/Superior06.PNG}
+	\includegraphics{../../../Imagenes/Superior/TransformadaDeLaplace/Laplace06.PNG}
 	
 	Sombreando bajo la curva obtenemos un rectangulo de area $\frac{1}{\tau} \cdot \tau = 1$.\\
 	Al hacer que $\tau$ tienda a $0$ la base del rectangulo será infinitesimal y la altura infinita.
 	
-	\includegraphics{../../../Imagenes/Superior/Superior07.PNG}
+	\includegraphics{../../../Imagenes/Superior/TransformadaDeLaplace/Laplace07.PNG}
 
 Es decir, la función $\delta(t)$ es una función que vale $0$ en todo el eje real menos en $t = 0$ donde vale $+\infty$.\\
 Matematicamente hablando $\delta(t)$ no es una función sino mas bien una distribución, pero aún así esta tiene una gran importancia y utilidad al momento de plantear y resolver modelos matematicos de sistemas fiscos y será tratada como una función. Para mas información buscar Delta de Dirac.
@@ -551,4 +551,22 @@ Antitransformamos:
 $$
 y(t) = -2e^{4t} + 5e^{-t}
 $$
-	\end{document}
+\\
+\\
+\Large Teorema de convolución o de Borel.
+\normalsize
+\\
+\\
+$$
+\mathscr{L}^{-1}[F(s)] = f(t) \hspace{3pt} \wedge \hspace{3pt} \Rightarrow \mathscr{L}^{-1}[F(s)\cdot G(s)] = \int_{0}^{t}f(u) g(t-u)du
+$$
+Observar que este teorema tambien significa que: 
+$$
+F(s)\cdot G(s) =\mathscr{L}[ \int_{0}^{t}f(u) g(t-u)du]
+$$
+Es un teorema util para resolver ecuaciones diferenciales de convolucion pero no le daremos mucho detalle, se tratará casi como una propiedad.
+
+
+
+
+\end{document}
