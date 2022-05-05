@@ -89,13 +89,87 @@ $$
 Esta propiedad es util para deshacerse de un denominador complejo multiplicando arriba y abajo por su conjugado similar a como se suele hacer con la radicación.
 \\
 \\
-\Large Potencias naturales
+\Large Potencias naturales en forma Binomica
+\normalsize
+\\
+\\
+$$
+z^{0} = 1
+$$
+$$
+z^{1} = z
+$$
+$$
+z^{n+1} = z^{n}\cdot z
+$$
+De acuerdo podemos calcular las potencias de la unidad imaginaria:
+\begin{align}
+  i^{0} &= 1 \\
+  i^{1} &= i \\
+  i^{2} &= -1 \\
+  i^{3} &= -i \\
+  i^{n} &= i^{r}
+\end{align}
+Siendo $r$ el resto de dividir a $n$ por $4$.
+\\
+
+Para poder calcular potencias en forma binomica $(a+bi)$ debemos utilizar el binomio de Newton:
+$$
+(a+bi)^{n} = \sum_{k=0}^{n}\binom{n}{k}a^{n-k}b^{k} 
+$$
+Esta sumatoria no es muy complicada de entender, tendremos $n$ terminos donde el coeficiente principal de cada uno está dado por el numero combinatorio entre $n$ y $k$. A medida que "avanzamos" en la sumatoria $k$ va aumentando de a $1$ haciendo que en cada termino la potencia de $b$ vaya aumentando hasta $n$ y la de $a$ disminuyendo desde $n$. No resulta de gran complejidad entender que está sucediendo y para llegar a las mismas conclusiones podemos tomar una potencia muy alta de un numero complejo y descomponerla en muchas multiplicaciones. Si intentamos generalizar ese proceso llegaremos al binomio de Newton. Una forma muy elegante de calcular complejos pero sin duda con demasiado trabajo. Mas adelante veremos como simplificar esta tarea.
+\\
+\\
+\Large Raiz cuadrada en forma Binomica.
 \normalsize
 \\
 \\
 
+Diremos que $u$ es la raiz cuadradada de $z \Leftrightarrow z = u^{2}$  
+Para esta operación realizaremos algunos calculos ya que no se puede ver a tan simple vista por donde comenzar.
+\\
+Sea $z = a+bi$ y $u = x + yi$:
+\begin{align}
+  u^{2}&= z\\
+  (x+yi)^{2}&= a+bi\\
+ x^{2}+2ixy-y^{2} &=a+bi\\
+\end{align}
+Por igualdad de complejos podemos deducir:
+\begin{align}
+  a &= x^{2} - y^{2}\\
+  b &=2xy 
+\end{align}
+Por otro lado tambien podemos argumentar lo siguiente:
+\begin{align}
+  u^{2}&=z\\
+  |u^{2}| &= |z|\\
+  |u|^{2} &= |z|\\
+  x^{2}+y^{2} &= |z| 
+\end{align}
+Si ahora sumamos miembro a miembro $(10)$ y $(15)$ obtenemos:
+\begin{align}
+  |z| + a &= 2x^{2}\\
+  x &= \sqrt{\frac{|z|+a}{2}}  
+\end{align}
+Y si restamos miembro a miembro $(10)$ y $(15)$.
+\begin{align}
+|z| - a &= 2y^{2}\\
+y &= \sqrt{\frac{|z|-a}{2}}  
+\end{align}
+Es decir: 
+$$
+u = \pm\sqrt{\frac{|z|+a}{2}}  \pm i\sqrt{\frac{|z|-a}{2}}   
+$$
+Lo cual nos dá como resultado $4$ posibles raices, pero sabemos que por el teorema fundamental del algebra, todo polinomio de grado $2$ tiene exactamente $2$ raices en el conjunto de los complejos.
+\\ 
+Podemos reestringir $2$ raices y dejarlas fuera gracias a la ecuación $(11)$. Recordemos que estamos calculando $\sqrt{z}$.
+Los distintos valores de $u$ vienen dados por los signos de $x$ e $y$. Por la ecuación $(11)$ podemos ver que los mismos están ligados al signo de $b$. Es decir, si $x$ e $y$ tienen el mismo signo, entonces $b$ será positivo, si tienen distinto signo entonces $b$ será negativo. De esta forma podemos resolver la distorsión. Si $b$ es positivo tendremos dos soluciónes para $\sqrt{z}$, una donde $x$ e $y$ son positivos y otra donde $x$ e $y$ son negativos. Si $b$ es negativo aún tendremos dos soluciones pero en una de estas $x$ será positivo e $y$ negativo y en la otra $x$ será negativo e $y$ positivo.
+\\
 
-
+\huge Forma polar de un complejo.
+\normalsize
+\\
+\\
 
 
 
