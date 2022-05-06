@@ -170,6 +170,74 @@ Los distintos valores de $u$ vienen dados por los signos de $x$ e $y$. Por la ec
 \normalsize
 \\
 \\
+Al igual que los vectores de $\mathbb{R}^{2}$, los numeros complejos pueden representarse en forma polar, de nuevo, gracias al isomorfismo que existe entre los conjuntos. 
+
+La forma polar de un numero complejo está representada por $\rho$ y $\varphi$ tal que $\rho = |z|$ y $\varphi = \arg(z)$. Observar que $\varphi$ o $\arg(z)$ es el ángulo que el vector asociado al numero complejo $z$ forma con el semieje real positivo.
+
+\includegraphics{../../../Imagenes/Superior/Complejos/Complejos02.PNG}
+\\
+\large Relación entre forma binomica y polar.
+\normalsize
+\\
+\\
+Por pitagoras es muy sencillo encontrar la siguiente relación:
+\begin{align}
+  a &= \rho \cos(\varphi)\\
+  b &= \rho \sin(\varphi)
+\end{align}
+Esto es util si se quiere pasar de polar a binomica ya que tenemos despjeados los valores de $a$ y $b$ en función de $\rho$ y $\varphi$. Veremos ahora como pasar de binomica a polar. Con un poco de pensamiento llegamos a:
+\begin{align}
+  \rho &=\sqrt{a^{2}+b^{2}}\\
+  \varphi &= \arctan(\frac{b}{a})
+\end{align}
+Estas formulas se deducen sencillamente con algunas propiedades de trigonometria y sin duda son ciertas y muy utiles pero, para algunos casos especiales, hay que pensar un poco mas.
+\\
+Por ejemplo, ¿Qué pasa si $a=0$ ? Entonces el numero es imaginario puro, ya que $a$ es la parte real. Los numeros imaginarios puros se encuentran sobre el eje imaginario (o eje de ordenadas) es decir, su argumento será de $\frac{\pi}{2}$ o bien $3\frac{\pi}{2}$ dependiendo de su signo.
+\\
+Pero aún hay un problema, la función $\tan(x) = y$ no es biyectiva en todo el dominio y por lo tanto se utiliza con el dominio reestringido a $(-\frac{\pi}{2};\frac{\pi}{2})$ para que exista su inversa $\arctan(x)=y$. Y todo esto, ¿Qué significa? Pues que la función de $\varphi$ en la calculadora sirve para calcular valores entre $(-\frac{\pi}{2};\frac{\pi}{2})$, es decír, complejos en el primer y cuarto cuadrante. Con un poco de pensamiento podemos solucionar esto solo sumando $\pi$ al valor cuando sabemos que nuestro numero está en el segundo o tercer cuadrante.
+
+
+Veremos un ejemplo para clarificar todo este palabrerio. Escribamos en polar el siguiente numero: $-1 + i \sqrt{3}$
+\\
+Primero que nada notemos que como $a$ es negativo y $b$ positivo, sabemos que el numero se encuentra en el segundo cuadrante.
+\\
+Ahora calculemos el modulo que es bastante sencillo:
+$$
+\rho =  \sqrt{(-1)^{2} + (\sqrt{3})^{2}} = 2
+$$
+Ahora usamos la formula del argumento y vemos que obtenemos:
+$$
+\varphi = \arctan(-\sqrt{3}) = -\frac{\pi}{3}
+$$
+\\
+Pensamos un poco y nos damo cuenta que un argumento de $-\frac{\pi}{3}$ deja el complejo en el cuarto cuadrante, pero el complejo original se encontraba en el segundo.
+
+\includegraphics{../../../Imagenes/Superior/Complejos/Complejos03.PNG}
+\\
+Aquí se nota porque se debe sumar $\pi$ o medio giro para obtener el argumento del complejo original. Y nuestro complejo queda:
+$$
+z = [2 ; 2\frac{\pi}{3}]
+$$
+\\
+\huge Forma trigonometrica de un complejo.
+\normalsize
+\\
+\\
+$$
+z = \rho (\cos\varphi + i \sin\varphi)
+$$
+En esta formula se esconden todas las relaciones entre binomica y polar que vimos anteriormente. Pero además el famoso matemático Euler demostró:
+$$
+\rho e^{i\varphi} = \rho (\cos\varphi + i \sin\varphi)
+$$
+No entraremos en detalle sobre la demostración de esta formula, pero recomiendo fuertemente buscar información al respecto porque la demostración es una de las mas bellas de las matematias. Para la materia solo la tomaremos como verdadera y diremos que la forma exponencial de un numero complejo $z$ es $\rho e^{i\varphi}$ donde $\rho = |z|$ y $\varphi = \arg(z)$. De aquí además es de donde sale la bella identidad: $e^{i\pi} + 1 = 0 $ ya que $-1$ tiene modulo $1$ y argumento $\pi$.
+\\
+\\
+\huge Operaciones en forma polar.
+\\
+\\
+\Large Iguadad
+
 
 
 
