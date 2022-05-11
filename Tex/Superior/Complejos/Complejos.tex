@@ -357,12 +357,161 @@ Por ejemplo: En el orden $6$ las raices primitivas son $w_1$ y $w_5$, en cambio 
 \\
 \\
 Si este tema no se entiende bien recordar que $n$ es el orden de las raices y nos dice cuantas raices hay en total en ese orden (contando $w_0$) y $k$ es la numeración de cada raíz en particular dentro de un orden $n$. Además recordar que todas las raices tienen el mismo modulo, por ende lo unico que las diferencia es el giro, esto hace que una raiz pueda tener como argumento un multiplo de otra y por esto repetirse en ordenes inferiores.
+\\
+\\
+\Large Logaritmo natural.
+\normalsize
+\\
+\\
+Diremos que un numero complejo $u = x+yi$ es logaritmo natural de $z$ si:
+$$
+z = e^{u}
+$$
+Deducción de la formula de calculo de $\ln(z)$:
+\begin{align}
+  z &= e^{u}\\
+  \rho e^{i\varphi} &= e^{x+iy}\\
+  \rho e^{i\varphi} &= e^{x}\cdot e^{iy}\\
+  \rho = e^{x} \hspace{5pt} & \wedge\hspace{5pt} y = \varphi +2k\pi\\
+  u_k &= ln(\rho) + i (\varphi + 2k\pi)
+\end{align}
+Cuando $k=0$ y $\varphi \in [0;2\pi)$ se define el valor principal de $\ln(z)$: $V.P(\ln z)  = \ln (\rho) + i\varphi$
+\\
+\\
+Importante notar que el logaritmo toma un numero en forma polar $[\rho;\varphi]$ y lo devuelve en forma binomica. Además el logaritmo tiene infinitas soluciones, y como la parte real de las mismas no depende de $k$ entonces todas se encuentran en la misma recta vertical $x=\ln\rho$. Para realizar calculos y cuando el logaritmo se encuentre afectado por otras operaciones se tomará el valor principal como el unico valor.
+\\
+\\
+\Large Potencia compleja de un complejo.
+\normalsize
+\\
+\\
+Sea $z = z_1^{z_2}$:
+\begin{align}
+  \ln(z) &= \ln(z_1^{z_2}) \\
+  \ln(z) &= z_2 \cdot \ln(z_1)\\
+  z &= e^{z_2\cdot\ln(z_1)}\\
+\end{align}
+\\
+\\
+\\
+\huge Aplicación de complejos: vibraciones armonicas simples
+\normalsize
+\\
+\\
+Los numeros complejos resultan muy útiles para la representación matematica de fenómenos periódicos. Los fenómenos periódicos mas sencillos presentes en la naturaleza, se expresan matematicamente mediante funciones senoidales.
+$$
+f(t) = A\sin(\omega t + \varphi)
+$$
+O bien, con su respectivo desplazamiento:
+$$
+f(t) = A\cos(\omega t + \varphi)
+$$
+Donde:\\
+$t$: Variable tiempo en segundos.\\
+$A$: Amplitud de onda o valor de pico.\\
+$\omega$: Pulsación o frecuencia angular.\\
+$f$: Frecuencia de vibración.\\
+$T$: Período.\\ 
+$\varphi$: Ángulo de fase inicial.\\
+Además:\\
+$f=\frac{1}{T}$\\\\
+$\omega = 2\pi f$
+\\
+\\
+Veremos como usar vectores complejos giratorios para representar estas funciones por mas que sean de variable real.
+\\
+\\
+Ya sabemos que $z=re^{i\varphi}$ es la representación exponencial de un numero complejo de módulo $r$ y argumento $\varphi$. Si ahora consideramos $\varphi=\omega t$ obtenemos la expresión $z=re^{i\omega t}$, un numero complejo que va variando su argumento (ángulo) dependiendo del tiempo. Esta es la expresión matematica de un vector giratorio de longitud constante $r$, que gira con una velocidad angular constante $\omega$ alrededor del origen.
 
+\includegraphics{../../../Imagenes/Superior/Complejos/Complejos05.PNG}
 
+La componente real de $z$ es la proyección del vector sobre el eje real, es decir: $r\cos(\omega t)$. Y la componente imaginaria de $z$ es su proyección sobre el eje imaginario: $r\sin(\omega t)$, esto se deduce facilmente recordando que $\omega t = \varphi$ y recordando la forma trigonometrica de un complejo propuesta mas arriba. En ambos casos, la proyeccion de un vector giratorio sobre un eje fijo es una magnitud que varia sinusoidalmente.
 
+El fenómeno expresado por la función senoidal se denomina Vibración armonica simple.
+\\
+\\
+\Large Fasores
+\normalsize
+\\
+\\
+Sea $A(t) = A_m \cos(\omega t +\varphi)$. Se puede interpretar como: $A(t) = Re[A_m \cos(\omega t +\varphi) + i A_m \sin(\omega t +\varphi)]$.
+\\
+Se puede deducir: 
+$$
+A(t) = Re[A_m e^{i(\omega t + \varphi)}]
+$$
+Donde:
+$$
+A_m e^{i(\omega t + \varphi)} = A_m e^{i\varphi}e^{i\omega t}
+$$
 
+A $A_m e^{i\varphi}$ se le llama el Fasor asociado a $A(t)$ y es la expresión de un numero complejo.
+Como $A(t)$ es una línea giratoria en el plano complejo, en un instante dado $(t=0)$ está representada por el fasor. Es decir, una cantidad fasorial es una instánea de la exponencial compleja tomada para $t=0$.
 
+Siempre que haya que trabajar con funciones sinusoidales será, en general, mas sencillo trabajar con sus respectivos asores.
+\\
+\\
+\Large Superposición de ondas de la misma frecuencia.
+\normalsize
+\\
+\\
+Sean $g_1(t) = A_1 \cos(\omega t)$ y $g_2(t) = A_2 \cos(\omega t + \varphi)$
 
+\includegraphics{../../../Imagenes/Superior/Complejos/Complejos06.PNG}
+
+Queremos obtener $g_1(t) + g_2(t)$ como una unica función sinusoidal. Para esto usaremos fasores.
+$$
+A_1 e^{i\omega t} + A_2 e^{i(\omega t +\varphi)} = (A_1 + A_2 e^{i\varphi})e^{i\omega t}
+$$
+Que se puede escribir $(A_1 + A_2 e^{i\varphi}) = Me^{i\theta}$.
+
+\includegraphics{../../../Imagenes/Superior/Complejos/Complejos07.PNG}
+
+El diagrama vectorial se suele trazar para un instante determinado, pero como la diferencia de fase es constante y la frecuencia angular es igual, el paralelogramo gira como una figura rígida con una velocidad angular $\omega$.
+\\
+\\
+Entonces:
+$$
+g_1(t) + g_2(t) = Re[e^{i\theta}e^{i\omega t}] \Rightarrow g_1(t)+g_2(t) = M \cos(\omega t +\theta)
+$$
+
+\includegraphics{../../../Imagenes/Superior/Complejos/Complejos08.PNG}
+
+Veremos un ejemplo para que se entienda mejor:
+\\
+\\
+Dados: $V_1(t) = 10\cos(3t-\frac{\pi}{3})$ y $V_2(t) = 5\cos(3t+5\frac{\pi}{12})$.
+\\
+Hallar: $V_1(t) + V_2(t)$ utilizando fasores.
+\\
+\\
+Buscamos los fasores:
+\begin{align}
+  V_1 &= 10 e^{-i\frac{\pi}{3}}\\
+  V_2 &= 5 e^{i5\frac{\pi}{12}}
+\end{align}
+
+Los pasamos a forma binomica para sumarlos.
+\begin{align}
+  V_1 &= 5-i8.66\\
+  V_2 &= 1.29+i4.83
+\end{align}
+Ahora los sumamos:
+$$
+V_1 + V_2 = 6.29 - i 3.83
+$$
+Lo pasamos a forma exponencial:
+$$
+V_1+V_2 = 7.36e^{-i0.55}
+$$
+Finalmente lo multiplicamos por $e^{i\omega t}$ que en este caso $\omega = 3$:
+$$
+7.36e^{i(3t-0.55)}
+$$
+Y por ultimo tomamos la parte real:
+$$
+V_1(t)+V_2(t) = 7.36\cos(3t-0.55)
+$$
 
 
 \end{document}
